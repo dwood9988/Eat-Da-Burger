@@ -1,0 +1,29 @@
+{
+  "name": "eat-da-burger",
+  "version": "1.0.0",
+  "description": "eat da burger",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwood9988/Eat-Da-Burger.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "dwood9988",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwood9988/Eat-Da-Burger/issues"
+  },
+  "homepage": "https://github.com/dwood9988/Eat-Da-Burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.12",
+    "mysql": "^2.16.0"
+  }
+}
