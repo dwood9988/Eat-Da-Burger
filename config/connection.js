@@ -1,14 +1,25 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: "cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+var connection;
+/*I have added this condtional here to decide which
+ connection we are going to use. The process is outlined in the 
+ deployment guide we have in the class repo.
+ MYSQLHerokuDeploymentProcess.pdf 
+ */ 
+if(process.env.JAWSDB_URL){
+  //Look to see if we are on heroku..
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+}else{ 
+//If not .. use the local connection
+connection = mysql.createConnection({
+  host: "localhost",
   port: 3306,
-  user: "tccrxdrr0j6c1y1l",
-  password: "r6tlk5a3xib35zt3",
-  database: "gslrhc7dc3nm4v0v"
+  user: "root",
+  password: "root",
+  database: "burgers_db"
 });
-
+}
 // Make connection.
 connection.connect(function(err) {
   if (err) {
